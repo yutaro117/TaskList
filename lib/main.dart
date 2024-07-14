@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'TaskProvider.dart';
 import 'TaskList.dart';
-//アプリがファイルを保存可能な場所を取得するライブラリ
 import 'package:provider/provider.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 

@@ -5,6 +5,7 @@ import 'TaskCreate.dart';
 import 'TaskEdit.dart';
 
 class TaskList extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,12 +15,23 @@ class TaskList extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.sort),
             onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('優先度の高い順にソートしました'),
+                ),
+              );
               Provider.of<TaskProvider>(context, listen: false).sortTaskByPriority();
+              
             },
           ),
           IconButton(
             icon: Icon(Icons.sort),
             onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('締め切りの近い順にソートしました'),
+                ),
+              );
               Provider.of<TaskProvider>(context, listen: false).sortTaskBydeadline();
             },
           ),
@@ -39,6 +51,11 @@ class TaskList extends StatelessWidget {
                   icon: Icon(Icons.delete),
                   onPressed: () {
                     taskProvider.removeTask(index);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('タスクを削除しました'),
+                      ),
+              );
                   },
                 ),
                 onTap: () {
@@ -62,7 +79,9 @@ class TaskList extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => TaskCreateScreen()),
+            
           );
+          
         },
         child: Icon(Icons.add),
       ),
@@ -76,5 +95,6 @@ class TaskList extends StatelessWidget {
       return Colors.green.withOpacity(0.5);
     }
   }
+
 }
 

@@ -87,7 +87,9 @@ class _TaskCreateScreenState extends State<TaskCreateScreen> {
             ElevatedButton(
               onPressed: _addTask,
               child: Text('タスク登録'),
+              
             ),
+            
           ],
         ),
       ),

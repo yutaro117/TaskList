@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'dart:async';
 import 'main.dart';
 
@@ -33,6 +31,7 @@ class Task {
 }
 
 class TaskProvider with ChangeNotifier {
+  final GlobalKey<ScaffoldMessengerState> _scaffoldKey = GlobalKey<ScaffoldMessengerState>();
   List<Task> _task = [
     Task(complete: 1, name: 'Task1:英語', time: '60分', priority: '1', deadline: 07141600, contents: 'P34~56'),
     Task(complete: 1, name: 'Task2:数学', time: '40分', priority: '1', deadline: 07132000, contents: 'P12~23'),
@@ -49,6 +48,7 @@ class TaskProvider with ChangeNotifier {
     _task.add(task);
     notifyListeners();
     _scheduleDeadlineNotification(task);
+    
   }
 
   void updateTask(int index, Task newTask) {
@@ -86,4 +86,6 @@ class TaskProvider with ChangeNotifier {
       });
     }
   }
+
+  
 }
