@@ -1,16 +1,38 @@
 # kadai_list
 
-A new Flutter project.
+本プログラムは、2024年7月14日に実施されたBenesse Edtech ハッカソンで開発されたアプリケーションです。ユーザがタスクをリストに登録できるアプリケーションになります。
 
-## Getting Started
+## 主な機能
 
-This project is a starting point for a Flutter application.
+・ユーザがタスクをリストに登録および削除できる機能
+（登録内容は、タスクが完了しているか？、タスクを行う時間、タスク内容、優先度、締め切り）
 
-A few resources to get you started if this is your first Flutter project:
+・タスクをソートする機能
+（優先度ソート、締め切り日時ソート）
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+・タスクが完了済みか判別する機能
+（緑色なら完了済み、赤色なら未完了）
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+・締め切りが近づいた場合に使用しているデバイスに通知する機能
+（今回は締め切りの12時間前に設定）
+
+## 使用方法
+学校から出された課題や、自分でやろうとしている勉強の予定などにお使いください
+ただし、使用にはいくつか注意事項があります
+
+※１：「タスクが完了しているかどうか」、「タスクの優先順位」、「タスクの締め切り日時」については、定められた整数でのみ入力してください
+
+・タスクが完了しているかどうか？
+→Yesなら1 Noなら0
+
+・タスクの優先順位
+1に近づくほど高い　
+
+・タスクの締め切り日時
+7月14日　17：00に締め切りをセットする場合　07141700
+※西暦の欄をセットしてないので、年をまたぐと正しくソートできません
+ご了承ください。
+
+※２：長い文章を入力すると、文がリストの枠からはみ出たり、映らなくなったりします
+
+※３：本アプリはリストのデータをサーバーやローカルに保存等していないため、アプリを閉じるとデータが初期化されます　ご了承ください。
